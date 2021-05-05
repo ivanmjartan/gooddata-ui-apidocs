@@ -1,0 +1,19 @@
+{
+    "name": "@gooddata/gooddata-ui-apidocs",
+    "version": "1.0.0",
+    "private": true,
+    "description": "GoodData React Components Documentation",
+    "repository": "git@github.com:gooddata/gooddata-ui-apidocs.git",
+    "author": "GoodData Corporation",
+    "license": "BSD-3-Clause",
+    "scripts": {
+        "start": "yarn compile-scss; docusaurus-start",
+        "build": "yarn compile-scss; docusaurus-build",
+        "write-translations": "docusaurus-write-translations",
+        "compile-scss": "sass static/scss/custom.scss static/css/custom.css"
+    },
+    "dependencies": {
+        "docusaurus": "^1.14.7",
+        "sass": "^1.2.0"
+    }
+}
