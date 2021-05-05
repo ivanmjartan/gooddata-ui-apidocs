@@ -1,0 +1,16 @@
+.separateOnPageNav .docsNavContainer {
+    flex: 0 0 300px;
+}
+
+.navGroup {
+    ul {
+        .navListItem:first-child {
+            .navItem {
+                font-size: 16px;
+                font-weight: bold;
+                margin-left: -8px;
+                text-align: center;
+            }
+        }
+    }
+}
