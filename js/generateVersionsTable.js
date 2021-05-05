@@ -16,7 +16,7 @@ loadJSON(function (res) {
 });
 
 function docUrl(doc, version) {
-    const baseUrl = '/tony-test/v' + version;
+    const baseUrl = '/gooddata-ui-apidocs/v' + version;
     return baseUrl + '/docs/' + doc;
 }
 
@@ -78,7 +78,9 @@ renderRowVersionTable(
     docUrl('index.html', 'Next')
 );
 
-const prevStableVersions = versions.filter((ver) => ver !== getLatestStable()).reverse();
+const prevStableVersions = versions
+    .filter((ver) => ver !== getLatestStable())
+    .reverse();
 prevStableVersions.forEach((ver) => {
     renderRowVersionTable(
         'past-versions-table-body',

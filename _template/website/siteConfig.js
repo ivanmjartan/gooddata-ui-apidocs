@@ -21,14 +21,14 @@ const siteConfig = {
     tagline:
         'A powerful JavaScript library for building analytical applications',
     url: 'https://sdk.gooddata.com' /* your website url */,
-    baseUrl: `/tony-test/v${docVersion.version}/` /* base url for your project */,
+    baseUrl: `/gooddata-ui-apidocs/v${docVersion.version}/` /* base url for your project */,
     projectName: 'gooddata-ui-apidocs',
     headerLinks: [
         {
-            href: `/tony-test/v${docVersion.version}/index`,
+            href: `/gooddata-ui-apidocs/v${docVersion.version}/index`,
             label: 'GoodData-UI-ApiDocs',
         },
-        { href: `/tony-test/index.html`, label: docVersion.version },
+        { href: `/gooddata-ui-apidocs/index.html`, label: docVersion.version },
     ],
     onPageNav: 'separate',
     users,
