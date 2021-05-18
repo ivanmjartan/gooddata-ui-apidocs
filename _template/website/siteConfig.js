@@ -66,6 +66,10 @@ const siteConfig = {
     ],
     // You may provide arbitrary config keys to be used as needed by your template.
     repoUrl: 'https://github.com/gooddata/gooddata-ui-apidocs',
+    algolia: {
+        apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
+        indexName: 'gooddata',
+    },
     twitter: 'true',
     twitterImage: 'img/metaimage.png',
     ogImage: 'img/metaimage.png',
