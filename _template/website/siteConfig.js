@@ -69,6 +69,9 @@ const siteConfig = {
     algolia: {
         apiKey: '96c60b7fb8c45e6d7598a7e4469d175d',
         indexName: 'gooddata',
+        algoliaOptions: {
+            facetFilters: ['version:' + docVersion.version, 'tags:gooddata-ui-apidocs'],
+        },
     },
     twitter: 'true',
     twitterImage: 'img/metaimage.png',
