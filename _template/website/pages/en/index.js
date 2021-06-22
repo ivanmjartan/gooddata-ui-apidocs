@@ -42,10 +42,24 @@ const ProjectTitle = (props) => <h1 className="projectTitle">{siteConfig.title}<
 
 const ProjectDescription = (props) => (
     <p className="projectDescription">
-        Component library for rapid <br className="noMobile" />
-        development of interactive <br className="noMobile" />
-        analytical user interfaces
+        API reference for the <a href="https://sdk.gooddata.com/gooddata-ui/">GoodData.UI</a>
+        <br className="noMobile" />
+        library.
     </p>
+);
+
+const ProjectDisclaimer = (props) => (
+    <React.Fragment>
+        <p>
+            All the content in this API reference is automatically generated from the source code located on{" "}
+            <a href="https://github.com/gooddata/gooddata-ui-sdk">GitHub</a>. In case of any inconsistencies
+            between this site and the source code, the source code is the source of truth.
+        </p>
+        <p>
+            Note that not all of the packages are currently included in this API reference. We are working on
+            improving them so that they can be included here.
+        </p>
+    </React.Fragment>
 );
 
 const SplashParallax = (props) => (
@@ -67,8 +81,9 @@ class HomeSplash extends React.Component {
                 <div className="left">
                     <ProjectTitle />
                     <ProjectDescription />
+                    <ProjectDisclaimer />
                     <Button href={docUrl("index.html")} className="button-link">
-                        See documentation
+                        I understand, take me to the API reference
                     </Button>
                 </div>
                 <div className="right">
