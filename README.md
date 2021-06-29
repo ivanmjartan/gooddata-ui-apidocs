@@ -6,7 +6,7 @@ This repository contains the source code of the [documentation](https://sdk.good
 
 ## Create/Update Version
 
-**NOTE:** For all the related scripts to work, `gooddata-ui-sdk` and `gooddata-ui-apidocs` have to be cloned in the same directory (so that `cd ./gooddata-ui-apidocs` works from `gooddata-ui-sdk`).
+**NOTE:** For all the related scripts to work, `gooddata-ui-sdk` and `gooddata-ui-apidocs` have to be cloned in the same directory (so that `cd ../gooddata-ui-apidocs` works from `gooddata-ui-sdk`).
 
 To preview changes you made in `gooddata-ui-sdk`, make sure all the projects you changed are build and then run `rush start-docs`.
 This will run the documentation with your changes.
