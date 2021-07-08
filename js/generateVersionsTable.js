@@ -20,14 +20,16 @@ function docUrl(doc, version) {
     return baseUrl + '/docs/' + doc;
 }
 
+function isStable(version) {
+    return version.split('-').length === 1;
+}
+
 function getStableVersions(versions) {
-    return versions.filter((v) => v.split('-').length === 1);
+    return versions.filter(isStable);
 }
 
 function getLatestStable() {
-    return versions.filter((v) => v.split('-').length === 1)[
-        versions.length - 1
-    ];
+    return getStableVersions(versions)[0];
 }
 
 function getVersionsOfType(type, versions) {
@@ -79,8 +81,8 @@ renderRowVersionTable(
 );
 
 const prevStableVersions = versions
-    .filter((ver) => ver !== getLatestStable())
-    .reverse();
+    .filter((ver) => ver !== getLatestStable());
+
 prevStableVersions.forEach((ver) => {
     renderRowVersionTable(
         'past-versions-table-body',
