@@ -15,9 +15,19 @@ loadJSON(function (res) {
     versions = JSON.parse(res);
 });
 
-function docUrl(doc, version) {
+function apiReferenceUrl(doc, version) {
     const baseUrl = '/gooddata-ui-apidocs/v' + version;
     return baseUrl + '/docs/' + doc;
+}
+
+function documentationUrl(version) {
+    const urlParts = [
+        'https://sdk.gooddata.com/gooddata-ui/docs',
+        version,
+        'about_gooddataui.html'
+    ];
+
+    return urlParts.filter(Boolean).join('/');
 }
 
 function isStable(version) {
@@ -48,7 +58,7 @@ function parseVersionToNumber(version) {
     return parseInt(version.replace(/\D/g, ''));
 }
 
-function renderRowVersionTable(tableBodyId, version, documentationLink) {
+function renderRowVersionTable(tableBodyId, version, documentationLink, apiReferenceLink) {
     // add version label
     const versionTableBody = document.getElementById(tableBodyId);
     const versionTableRow = document.createElement('tr');
@@ -56,13 +66,22 @@ function renderRowVersionTable(tableBodyId, version, documentationLink) {
     versionLabel.textContent = version;
     versionTableRow.appendChild(versionLabel);
 
-    // add documentation link
+    // add Documentation link
     const versionDocumentation = document.createElement('td');
     const versionDocumentationLink = document.createElement('a');
     versionDocumentationLink.textContent = 'Documentation';
     versionDocumentationLink.setAttribute('href', documentationLink);
     versionDocumentation.appendChild(versionDocumentationLink);
     versionTableRow.appendChild(versionDocumentation);
+
+    // add API Reference link
+    const versionApiReference = document.createElement('td');
+    const versionApiReferenceLink = document.createElement('a');
+    versionApiReferenceLink.textContent = 'API Reference';
+    versionApiReferenceLink.setAttribute('href', apiReferenceLink);
+    versionApiReference.appendChild(versionApiReferenceLink);
+    versionTableRow.appendChild(versionApiReference);
+
     versionTableBody.appendChild(versionTableRow);
 }
 
@@ -70,14 +89,16 @@ function renderRowVersionTable(tableBodyId, version, documentationLink) {
 renderRowVersionTable(
     'latest-stable-version-table-body',
     getLatestStable(),
-    docUrl('index.html', getLatestStable())
+    documentationUrl(/* intentionally empty for latest version */),
+    apiReferenceUrl('index.html', getLatestStable())
 );
 
 // Next table row
 renderRowVersionTable(
     'next-version-table-body',
     'Next',
-    docUrl('index.html', 'Next')
+    documentationUrl('next'),
+    apiReferenceUrl('index.html', 'Next')
 );
 
 const prevStableVersions = versions
@@ -87,6 +108,7 @@ prevStableVersions.forEach((ver) => {
     renderRowVersionTable(
         'past-versions-table-body',
         ver,
-        docUrl('index.html', ver)
+        documentationUrl(ver),
+        apiReferenceUrl('index.html', ver)
     );
 });
