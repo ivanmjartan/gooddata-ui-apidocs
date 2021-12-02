@@ -38,7 +38,6 @@
         <span class="hljs-keyword">return</span> MyCustomDecorator;
     }
 })
-
 </code></pre>
 <p>The above shows how to register a decorator that will use some condition to determine whether particular insight is eligible for decoration. If yes, it will add some extra text in front of the insight. Decorator defers rendering of the actual insight to the underlying provider.</p>
 <p>Note: the factory function that you specify will be called immediately at the registration time. The provider that it returns will be called at render time.</p>
