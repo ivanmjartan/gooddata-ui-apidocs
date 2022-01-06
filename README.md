@@ -23,6 +23,6 @@ When making changes to the `gooddata-ui-sdk` documentation, refer to [TSDoc](htt
 
 ## License
 
-(C) 2020 GoodData Corporation
+(C) 2020-2022 GoodData Corporation
 
 For more information, please see [LICENSE](LICENSE).
