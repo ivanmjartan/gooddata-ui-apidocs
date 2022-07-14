@@ -26,9 +26,11 @@
             <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
         }
 
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyCustomDecorator</span>(<span class="hljs-params">props</span>) </span>{
-             <span class="hljs-keyword">const</span> Decorated = next(insight, widget);
+        <span class="hljs-comment">// Make sure you call this outside the component render function,</span>
+        <span class="hljs-comment">// otherwise a new instance of the decorated component is created on each re-render.</span>
+        <span class="hljs-keyword">const</span> Decorated = next(insight, widget);
 
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyCustomDecorator</span>(<span class="hljs-params">props</span>) </span>{
              <span class="hljs-keyword">return</span> (
                  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
                      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>My Custom Decoration<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
