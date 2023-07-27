@@ -1,0 +1,134 @@
+.button {
+    min-width: 12rem;
+    min-height: 2.875rem;
+    padding: 0.7rem 0.9rem;
+    border: 2px solid $gd-color-dark;
+    border-radius: 3px;
+    color: $gd-color-dark;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.225rem;
+    text-align: center;
+    text-transform: none;
+    background-color: transparent;
+    transition: all 0.3s;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none !important;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $gd-color-white;
+        background-color: $gd-color-dark;
+    }
+
+    &-inverted {
+        color: $gd-color-white;
+        border-color: $gd-color-white;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $gd-color-dark;
+            background-color: $gd-color-white;
+        }
+    }
+
+    &-dark {
+        color: $gd-color-white;
+        border-color: $gd-color-dark;
+        background-color: $gd-color-dark;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $gd-color-dark;
+            background-color: $gd-color-white;
+        }
+    }
+
+    &.docs-prev,
+    &.docs-next {
+        min-width: 0;
+        margin: 1rem 0;
+    }
+}
+
+.button-link {
+    color: $gd-color-highlight;
+    text-decoration: underline;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: #0084c9;
+    }
+}
+
+a {
+    color: $gd-color-highlight;
+    transition: all 0.2s;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $gd-color-text;
+        text-decoration: underline;
+    }
+}
+
+.button-more-charts {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    padding: 6px 15px;
+    border: 1px solid $gd-color-disabled;
+    border-radius: 100px;
+    color: #6c7581;
+    font-size: 14px;
+    line-height: 22px;
+
+    &::before {
+        content: "+";
+        position: relative;
+        display: inline-block;
+        margin-top: -1px;
+        margin-right: 7px;
+        color: #97a1ae;
+        font-size: 20px;
+        font-weight: bold;
+        vertical-align: top;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $gd-color-state-blank;
+        text-decoration: none;
+    }
+}
+
+.buttonWrapper {
+    display: flex;
+
+    @media #{$large-down} {
+        justify-content: center;
+    }
+
+    & & + & {
+        margin-left: 20px;
+    }
+}
