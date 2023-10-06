@@ -1,0 +1,459 @@
+.fixedHeaderContainer {
+    padding: 0;
+    background: $gd-color-white;
+
+    @media #{$large-up} {
+        height: 124px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 65px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        background-color: $gray-2;
+
+        @media #{$large-down} {
+            display: none;
+        }
+    }
+
+    header img,
+    .logo {
+        width: 122px;
+        height: 35px;
+
+        @media only screen and (min-width: 1400px) {
+            margin-right: 258px;
+        }
+    }
+
+    header {
+        height: 65px;
+        align-items: center;
+
+        > a {
+            flex: 0 0 auto;
+
+            &:hover,
+            &:active,
+            &:focus {
+                h3 {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        a {
+            .logo {
+                display: block;
+                opacity: 0.9;
+                margin-top: -4px;
+            }
+
+            &:hover .logo {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            display: none;
+        }
+
+        @media #{$large-down} {
+            height: 65px;
+        }
+    }
+}
+
+.navigationSlider {
+    position: relative;
+    flex: 1 1 auto;
+
+    .slidingNav {
+        padding: 0;
+
+        ul {
+            background-color: transparent;
+
+            @media #{$large-down} {
+                width: auto;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-top: 65px;
+            }
+
+            @media #{$large-up} {
+                justify-content: center;
+                margin-right: 250px;
+            }
+
+            @media only screen and (min-width: 1400px) {
+                margin-right: 380px;
+            }
+        }
+
+        ul li {
+            flex: 0 1 auto;
+            padding: 0;
+
+            a {
+                margin: 0;
+                padding: 20px 20px 16px;
+                border-bottom: 2px solid transparent;
+                color: transparentize($gd-color-dark, 0.3);
+                line-height: 24px;
+                font-size: 14px;
+                font-weight: bold;
+                text-decoration: none;
+                transition: all 0.2s;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $gd-color-dark;
+                    background-color: transparent;
+                }
+
+                &:empty {
+                    display: none;
+                }
+
+                &[href="https://www.gooddata.com/developers/"]
+                {
+                    @media #{$large-up} {
+                        position: relative;
+                        margin-right: 20px;
+                        padding-left: 25px;
+
+                        &::before {
+                            content: "";
+                            display: inline-block;
+                            position: absolute;
+                            left: 0;
+                            top: 19px;
+                            width: 24px;
+                            height: 24px;
+                            background: url(https://www.gooddata.com/learn-assets/img/navicon-learn.svg)
+                                center no-repeat;
+                            background-size: contain;
+                        }
+
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            position: absolute;
+                            right: -9px;
+                            top: 24px;
+                            width: 2px;
+                            height: 18px;
+                            background: $gd-color-dark;
+                        }
+                    }
+                }
+
+                &[href="https://www.gooddata.com/developers/cloud-native/doc/"]
+                {
+                    border-bottom-color: $gd-color-dark;
+
+                    @media #{$large-down} {
+                        color: $gd-color-dark;
+                    }
+
+                    .separateOnPageNav & {
+                        border-bottom-color: transparent;
+
+                        @media #{$large-down} {
+                            color: transparentize($gd-color-dark, 0.3);
+                        }
+                    }
+                }
+
+                &[href="/gooddata-ui/"] {
+                    .separateOnPageNav & {
+                        border-bottom-color: $gd-color-dark;
+
+                        @media #{$large-down} {
+                            color: $gd-color-dark;
+                        }
+                    }
+                }
+
+                @media #{$large-down} {
+                    height: 1.5rem;
+                    padding: 0 0.5rem;
+                    line-height: 1.5rem;
+                }
+
+                @media #{$large-up} {
+                    height: 65px;
+                    line-height: 65px;
+                    border-bottom-width: 4px;
+
+                    &[href*="https://github.com/"],
+                    &[href*="https://gdui-examples.herokuapp.com/"],
+                    &[href*="/gooddata-ui/docs/interactive_examples.html"] {
+                        position: absolute;
+                        top: 80px;
+                        right: 0;
+                        display: none;
+                        height: 1.75rem;
+                        margin: 0;
+                        padding: 5px 10px;
+                        border: 1px solid transparentize($gd-color-dark, 0.5);
+                        border-radius: 100px;
+                        color: $gd-color-dark;
+                        font-size: 0.75rem;
+                        font-weight: normal;
+                        line-height: 1.75rem;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            border-color: $gd-color-dark;
+                        }
+
+                        .separateOnPageNav & {
+                            display: flex;
+                        }
+                    }
+
+                    &[href*="https://github.com/"]
+                    {
+                        right: 0;
+                    }
+
+                    &[href*="https://gdui-examples.herokuapp.com/"]
+                    {
+                        right: 71px;
+                    }
+
+                    &[href*="/gooddata-ui/docs/interactive_examples.html"] {
+                        right: 141px;
+                    }
+
+                    &[href*="/gooddata-ui-apidocs/index.html"] {
+                        position: absolute;
+                        top: 75px;
+                        right: 240px;
+                        color: $gd-color-text;
+                        height: 1.75rem;
+                        line-height: 1.75rem;
+                        font-weight: normal;
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(1) a[href="/gooddata-ui/"],
+            &:nth-child(2) a[href="https://www.gooddata.com/developers/cloud-native/doc/"]
+            {
+                position: absolute;
+                top: 82px;
+                left: -132px;
+                height: 24px;
+                margin: 0;
+                padding: 0;
+                border: none;
+                font-size: 14px;
+                font-weight: normal;
+                line-height: 24px;
+                color: $gd-color-highlight;
+
+                @media only screen and (min-width: 1400px) {
+                    left: -380px;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    text-decoration: underline;
+                }
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 10px;
+                    background-image: url("../img/header/icon-gdui.svg");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+
+            &:nth-child(1) a[href="/gooddata-ui/"] {
+                .separateOnPageNav & {
+                    display: none;
+                }
+
+                @media #{$large-down} {
+                    display: none;
+                }
+            }
+
+            &:nth-child(2) a[href="https://www.gooddata.com/developers/cloud-native/doc/"]
+            {
+                display: none;
+
+                &::after {
+                    content: "GoodData.UI";
+                    position: absolute;
+                    left: 100%;
+                    padding-left: 19px;
+                    color: $gd-color-state-blank;
+                    background-image: url("../img/header/chevron.svg");
+                    background-repeat: no-repeat;
+                    background-position: 6px 4px;
+                    pointer-events: none;
+                }
+
+                .separateOnPageNav & {
+                    @media #{$large-up} {
+                        display: flex;
+                    }
+                }
+            }
+
+            a[href="https://www.gooddata.com/developers/cloud-native-community-edition/"]
+            {
+                position: absolute;
+                top: 17px;
+                right: 0;
+                height: 30px;
+                margin: 0;
+                padding: 5px 18px;
+                border: 2px solid $gd-color-dark;
+                border-radius: 4px;
+                font-size: 13px;
+                line-height: 18px;
+                color: $gd-color-dark;
+                transition: 0.15s ease-in-out;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $gd-color-white;
+                    background-color: $gd-color-dark;
+                }
+
+                @media #{$large-down} {
+                    display: none;
+                }
+            }
+        }
+
+        .navSearchWrapper {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 50px;
+            bottom: 0;
+            display: none;
+            width: auto;
+            justify-content: flex-start;
+            padding: 0 20px;
+
+            &::before,
+            &::after {
+                display: none;
+            }
+
+            .separateOnPageNav & {
+                display: flex;
+            }
+
+            @media #{$large-up} {
+                top: 94px;
+                right: 289px;
+            }
+
+            @media #{$large-down} {
+                height: 65px;
+            }
+
+            @media #{$medium-down} {
+                right: 60px;
+            }
+        }
+
+        @media #{$large-down} {
+            box-shadow: $shadow;
+            background: $gray-3;
+
+            .sideNavVisible & {
+                box-shadow: none;
+            }
+        }
+    }
+
+    nav.slidingNav {
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: 0;
+        background: $gray-3;
+
+        @media #{$large-up} {
+            background: none;
+            height: auto;
+            position: relative;
+            right: auto;
+            top: auto;
+            width: auto;
+        }
+    }
+
+    @media #{$large-up} {
+        overflow: visible;
+
+        &,
+        nav.slidingNav,
+        .nav-site {
+            height: 100%;
+        }
+    }
+}
+
+.navPusher {
+    display: flex;
+    flex-direction: column;
+    padding-top: 88px;
+
+    @media #{$large-up} {
+        padding-top: 124px;
+    }
+}
+
+h1,
+.mainContainer .wrapper .post h1,
+.mainContainer .wrapper .post h2,
+.mainContainer .wrapper .post h3 {
+    color: $gd-color-dark;
+}
+
+nav.toc .toggleNav .navGroup.navGroupActive {
+    background: rgba(230, 230, 230, 1);
+
+    h3 {
+        background: linear-gradient(to bottom, #1e2025 0%, #0a0d14 100%);
+    }
+}
+
+.hamburger-menu {
+    top: 0;
+
+    .docsSliderActive & {
+        top: 5px;
+    }
+}
