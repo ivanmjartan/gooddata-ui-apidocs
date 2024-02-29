@@ -1,3 +1,4 @@
+// (C) 2007-2024 GoodData Corporation
 function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType('application/json');

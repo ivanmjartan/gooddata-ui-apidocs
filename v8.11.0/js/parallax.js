@@ -1,3 +1,4 @@
+// (C) 2007-2024 GoodData Corporation
 document.addEventListener("DOMContentLoaded", function () {
     var splash = document.getElementById("splash-parallax"),
         layers = splash.childNodes,
