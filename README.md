@@ -4,6 +4,11 @@ GoodData.UI is a powerful JavaScript library for building analytical application
 
 This repository contains the source code of the [documentation](https://sdk.gooddata.com/gooddata-ui-apidocs/index.html).
 
+## Run specific version
+
+Install the dependencies, run `npm run start` and visit [http://localhost:5000](http://localhost:5000) in the browser.
+Older versions of the documentation are still in the git history, so you may need to checkout older revision first to see version which is no longer present in the `master` branch.
+
 ## Create/Update Version
 
 **NOTE:** For all the related scripts to work, `gooddata-ui-sdk` and `gooddata-ui-apidocs` have to be cloned in the same directory (so that `cd ../gooddata-ui-apidocs` works from `gooddata-ui-sdk`).
