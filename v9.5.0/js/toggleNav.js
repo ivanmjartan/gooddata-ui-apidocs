@@ -1,3 +1,4 @@
+// (C) 2007-2024 GoodData Corporation
 document.addEventListener("DOMContentLoaded", function () {
     var navToggler = document.getElementById("navToggler");
 
