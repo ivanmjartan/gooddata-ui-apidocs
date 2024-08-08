@@ -3,9 +3,9 @@ VERSIONS=$(ls -d */ |grep v[\0-9] |grep -v v8 | sort -V)
 echo "$VERSIONS"
 
 NUM_VERSIONS=$(echo "$VERSIONS" | wc -l)
-if [ "$NUM_VERSIONS" -gt 3 ]; then
+if [ "$NUM_VERSIONS" -gt 2 ]; then
     DIR=$(echo "$VERSIONS" | head -n 1)
-    echo "There are more than 3 versions, removing oldest one in $DIR"
+    echo "There are more than 2 versions, removing oldest one in $DIR"
     git rm -r $DIR
 
     # remove leading v and trailing / from the version dir
