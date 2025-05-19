@@ -7,8 +7,8 @@
     "author": "GoodData Corporation",
     "license": "BSD-3-Clause",
     "scripts": {
-        "start": "yarn compile-scss; docusaurus-start",
-        "build": "yarn compile-scss; docusaurus-build",
+        "start": "BROWSERSLIST_IGNORE_OLD_DATA=1 yarn compile-scss; docusaurus-start",
+        "build": "BROWSERSLIST_IGNORE_OLD_DATA=1 yarn compile-scss; docusaurus-build",
         "write-translations": "docusaurus-write-translations",
         "compile-scss": "sass static/scss/custom.scss static/css/custom.css"
     },
